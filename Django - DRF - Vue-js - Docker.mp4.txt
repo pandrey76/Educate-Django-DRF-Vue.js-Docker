@@ -79,7 +79,7 @@ Quit the server with CONTROL-C.
 
     Остановили Ctrl+z.
 
-    запустили миграции
+    Запустили миграции
 
     (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ ./manage.py migrate
 Operations to perform:
@@ -103,4 +103,165 @@ Running migrations:
   Applying auth.0011_update_proxy_permissions... OK
   Applying sessions.0001_initial... OK
 
+   Создаём Frontend через Vue CLI.
 
+   Сначало необходимо установить Node.js. Vue CLI требуется Node.js версии 8.9 или выше (рекомендуется 8.11.0+).
+Управлять несколькими версиями Node на машине можно с помощью nvm или nvm-windows.
+
+    Устанавливаем Vue CLI:
+
+        npm install -g @vue/cli
+            # ИЛИ
+        yarn global add @vue/cli
+
+        vue --version
+
+    Обновление
+    Для обновления глобального пакета Vue CLI выполните команду:
+
+        npm update -g @vue/cli
+            # ИЛИ
+        yarn global upgrade --latest @vue/cli.
+
+    (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker$ vue create frontend
+
+Шаг №1
+    Vue CLI v4.2.3
+     ? Please pick a preset: (Use arrow keys)
+     ❯ default (babel, eslint)
+        Manually select features
+    Здесь выбираем "Manually".
+
+Шаг №2
+    Vue CLI v4.2.3
+    ? Please pick a preset: Manually select features
+    ? Check the features needed for your project:
+        ◉ Babel
+        ◯ TypeScript
+        ◯ Progressive Web App (PWA) Support
+        ◉ Router
+        ◯ Vuex
+        ◯ CSS Pre-processors
+    ❯◉ Linter / Formatter
+        ◯ Unit Testing
+        ◯ E2E Testing
+    Жмём "Enter".
+
+Шаг №3
+    Vue CLI v4.2.3
+    ? Please pick a preset: Manually select features
+    ? Use history mode for router? (Requires proper server setup for index fallback in production) (Y/n)
+    Жмём "n".
+
+Шаг №4
+    Vue CLI v4.2.3
+    ? Please pick a preset: Manually select features
+    ? Check the features needed for your project: Babel, Router, Linter
+    ? Use history mode for router? (Requires proper server setup for index fallback in production) No
+    ? Pick a linter / formatter config:
+        ESLint with error prevention only
+    ❯ ESLint + Airbnb config
+        ESLint + Standard configШаг №5
+        ESLint + Prettier
+    Выбираем ESLint + Airbnb config и жмём "Enter".
+
+Шаг №5
+    Vue CLI v4.2.3
+    ? Please pick a preset: Manually select features
+    ? Check the features needed for your project: Babel, Router, Linter
+    ? Use history mode for router? (Requires proper server setup for index fallback in production) No
+    ? Pick a linter / formatter config: Airbnb
+    ? Pick additional lint features: (Press <space> to select, <a> to toggle all, <i> to invert selection)
+        ❯◉ Lint on save
+        ◯ Lint and fix on commit
+    Выбираем "Lint on save" и жмём "Enter".
+
+Шаг №6
+    Vue CLI v4.2.3
+    ? Please pick a preset: Manually select features
+    ? Check the features needed for your project: Babel, Router, Linter
+    ? Use history mode for router? (Requires proper server setup for index fallback in production) No
+    ? Pick a linter / formatter config: Airbnb
+    ? Pick additional lint features: (Press <space> to select, <a> to toggle all, <i> to invert selection)Lint on save
+    ? Where do you prefer placing config for Babel, ESLint, etc.? (Use arrow keys)
+    ❯ In dedicated config files
+      In package.json
+    Выбираем "In dedicated config files" и жмём "Enter".
+
+Шаг №7
+    Vue CLI v4.2.3
+    ? Please pick a preset: Manually select features
+    ? Check the features needed for your project: Babel, Router, Linter
+    ? Use history mode for router? (Requires proper server setup for index fallback in production) No
+    ? Pick a linter / formatter config: Airbnb
+    ? Pick additional lint features: (Press <space> to select, <a> to toggle all, <i> to invert selection)Lint on save
+    ? Where do you prefer placing config for Babel, ESLint, etc.? In dedicated config files
+    ? Save this as a preset for future projects? (y/N)
+     Жмём непонятно что, как автор сказал "Что-то натыкал".
+
+Шаг №8
+Vue CLI v4.2.3
+    ? Please pick a preset: Manually select features
+    ? Check the features needed for your project: Babel, Router, Linter
+    ? Use history mode for router? (Requires proper server setup for index fallback
+    in production) No
+    ? Pick a linter / formatter config: Airbnb
+    ? Pick additional lint features: (Press <space> to select, <a> to toggle all, <i> to invert selection)Lint on save
+    ? Where do you prefer placing config for Babel, ESLint, etc.? In dedicated config files
+    ? Save this as a preset for future projects? No
+    ? Pick the package manager to use when installing dependencies: NPM
+
+Начался процесс установки
+Vue CLI v4.2.3
+✨  Creating project in /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/frontend.
+⚙️  Installing CLI plugins. This might take a while...
+
+
+> yorkie@2.0.0 install /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/frontend/node_modules/yorkie
+> node bin/install.js
+
+setting up Git hooks
+can't find .git directory, skipping Git hooks installation
+
+> core-js@3.6.4 postinstall /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/frontend/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+
+> ejs@2.7.4 postinstall /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/frontend/node_modules/ejs
+> node ./postinstall.js
+
+added 1165 packages from 850 contributors and audited 25381 packages in 119.182s
+found 0 vulnerabilities
+
+
+┌──────────────────────────────────────────────────────────┐
+│                 npm update check failed                  │
+│           Try running with sudo or get access            │
+│           to the local update config store via           │
+│ sudo chown -R $USER:$(id -gn $USER) /home/admin1/.config │
+└──────────────────────────────────────────────────────────┘
+🚀  Invoking generators...
+📦  Installing additional dependencies...
+
+added 120 packages from 54 contributors and audited 26683 packages in 32.44s
+found 0 vulnerabilities
+
+
+┌──────────────────────────────────────────────────────────┐
+│                 npm update check failed                  │
+│           Try running with sudo or get access            │
+│           to the local update config store via           │
+│ sudo chown -R $USER:$(id -gn $USER) /home/admin1/.config │
+└──────────────────────────────────────────────────────────┘
+⚓  Running completion hooks...
+
+📄  Generating README.md...
+
+🎉  Successfully created project frontend.
+👉  Get started with the following commands:
+
+ $ cd frontend
+ $ npm run serve
+
+
+  Всё мы сейчас создали frontend/.
