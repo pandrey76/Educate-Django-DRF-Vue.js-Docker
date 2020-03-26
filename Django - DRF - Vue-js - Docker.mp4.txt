@@ -264,4 +264,27 @@ found 0 vulnerabilities
  $ npm run serve
 
 
-  Всё мы сейчас создали frontend/.
+  Всё, мы сейчас создали frontend, точнее приложение (Vue application).
+
+  Запускаем нашу балванку Vue application.
+
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker$ cd frontend
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/frontend$ npm run serve
+
+> frontend@0.1.0 serve /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/frontend
+> vue-cli-service serve
+
+ INFO  Starting development server...
+98% after emitting CopyPlugin
+
+ DONE  Compiled successfully in 2883ms                                                                                                  15:56:25
+
+
+  App running at:
+  - Local:   http://localhost:8080/
+  - Network: http://10.67.194.63:8080/
+
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
+
+   В браузере переходим на представленнывыше URL и в браузере видим балванку нашего приложение.
