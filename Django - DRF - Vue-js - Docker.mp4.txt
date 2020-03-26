@@ -1,0 +1,80 @@
+
+    Django - DRF - Vue-js - Docker
+
+    Django Rest Framework
+
+Home page: https://www.django-rest-framework.org/
+Django Rest Framework - позволяет нам удобно сериализовать и десериализовать наши бизнес модели. Например у нас есть
+объект "Автомобиль", который хранится в СУБД и у этого объекта есть ряд аттрибутов:
+    - Vendor;
+    - Модель автомобиля;
+    - ОбЪем двигателя;
+    - Год выпуска;
+    - и т.д.
+ И нам нужно это всё сериализовать например в JSON мы для этого как раз и будем использовать DRF.
+
+    Vue.js
+
+Vue.js - очень гибкий JS Framework, в отличие от React, который позволяет нам стартовать новые проекты и чисто на Vue.js и
+дополнять Vue.js уже существующие проекты, на одной странице может быть JQuery, а на другой у нас может быть Vue.js.
+основной особенностью Vue.js, как и всех JS Frameworks является реактивность и декларотивность.
+    Реактивность - подразумевается следующее, допустим мы рисуем какую-нибудь переменную она у нас равна 5, потом мы
+меняем эту переменную на 10 и она у нас перерисовывается во всех местах и во всех местах от неё зависящих происходит
+перерисовка или пересчёт и т.д.
+    Декларотивность - мы описываем не как должны менятся данные, а где они должны отображатся и по какой схеме их
+вычислять, т.е. мы напрямую с DOM деревом html страницы не взаимодействуем, другими словами нам не надо писать код типа
+$a.mobile.text = "Hello!", который все привыкли писать на JQuery и сильно страдать от этого. Vue.js нас от этого
+избавляет. 07.01
+
+    Создаём папку проекта и первое, что мы делаем это создаём виртуальное окружение - отдельный инстанс Python, который
+содержит свои библиотеки с определёнными версиями, для того чтобы обеспеычить совместимость и работу даже старых
+проектов со старыми пакетами Python.
+    admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker$ python3 -m venv localenv
+    admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker$ cd localenv
+    admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv$ cd bin
+    admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/bin$ . activate
+    (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/bin$ . activate
+    (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/bin$
+    (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/bin$ django
+        django: команда не найдена
+    (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/bin$ pip3 install django
+Collecting django
+  Cache entry deserialization failed, entry ignored
+  Downloading https://files.pythonhosted.org/packages/12/68/8c125da33aaf0942add5095a7a2a8e064b3812d598e9fb5aca9957872d71/Django-3.0.4-py3-none-any.whl (7.5MB)
+    100% |████████████████████████████████| 7.5MB 152kB/s
+Collecting pytz (from django)
+  Cache entry deserialization failed, entry ignored
+  Downloading https://files.pythonhosted.org/packages/e7/f9/f0b53f88060247251bf481fa6ea62cd0d25bf1b11a87888e53ce5b7c8ad2/pytz-2019.3-py2.py3-none-any.whl (509kB)
+    100% |████████████████████████████████| 512kB 352kB/s
+Collecting asgiref~=3.2 (from django)
+  Downloading https://files.pythonhosted.org/packages/68/00/25013f7310a56d17e1ab6fd885d5c1f216b7123b550d295c93f8e29d372a/asgiref-3.2.7-py2.py3-none-any.whl
+Collecting sqlparse>=0.2.2 (from django)
+  Cache entry deserialization failed, entry ignored
+  Downloading https://files.pythonhosted.org/packages/85/ee/6e821932f413a5c4b76be9c5936e313e4fc626b33f16e027866e1d60f588/sqlparse-0.3.1-py2.py3-none-any.whl (40kB)
+    100% |████████████████████████████████| 40kB 262kB/s
+Installing collected packages: pytz, asgiref, sqlparse, django
+Successfully installed asgiref-3.2.7 django-3.0.4 pytz-2019.3 sqlparse-0.3.1
+    (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/bin$ cd ../
+    (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv$ cd ../
+    (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker$ django-admin startproject project
+
+    Здесь переименовываем "project/prioject" в "backend/project"
+
+    (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker$ cd backend
+    (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ ./manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 17 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+March 26, 2020 - 05:55:05
+Django version 3.0.4, using settings 'project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+    Стартанули пустой web сервер на django.
+
+
