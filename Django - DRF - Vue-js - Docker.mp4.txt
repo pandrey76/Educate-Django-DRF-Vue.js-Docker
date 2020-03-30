@@ -405,6 +405,14 @@ admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.
 
     Создаём модели "models.py".
 
+    Моздаём Миграции:
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educa-Django-DRF-Vue.js-Docker/backend$ ./manage.py makemigrations
+Migrations for 'core':
+  core/migrations/0001_initial.py
+    - Create model Car
+
+
+
 
 
 
