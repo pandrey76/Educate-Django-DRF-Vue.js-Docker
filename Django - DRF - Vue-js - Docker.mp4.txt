@@ -384,6 +384,27 @@ admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.
   Note that the development build is not optimized.
   To create a production build, run npm run build.
 
+   Прописываем наше Django приложение в файл 'Settings.py' нашего backend проекта.
+
+    TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'core',
+            ],
+        },
+    },
+]
+
+    Создаём модели "models.py".
+
 
 
 
