@@ -386,6 +386,26 @@ Quit the server with CONTROL-C.
 <font color="#34E2E2"><b>Migrations for &apos;core&apos;:</b></font>
   <b>core/migrations/0001_initial.py</b>
     - Create model Car
+(localenv) <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend</b></font>$ ./manage.py migrate
+<font color="#34E2E2"><b>Operations to perform:</b></font>
+<b>  Apply all migrations: </b>admin, auth, contenttypes, core, sessions
+<font color="#34E2E2"><b>Running migrations:</b></font>
+  Applying core.0001_initial...<font color="#8AE234"><b> OK</b></font>
+(localenv) <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend</b></font>$ ./manage.py migrate core 0001
+<font color="#34E2E2"><b>Operations to perform:</b></font>
+<b>  Target specific migration: </b>0001_initial, from core
+<font color="#34E2E2"><b>Running migrations:</b></font>
+  No migrations to apply.
+(localenv) <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend</b></font>$ ./manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 30, 2020 - 14:46:32
+Django version 3.0.4, using settings &apos;project.settings&apos;
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[30/Mar/2020 14:46:35] &quot;GET / HTTP/1.1&quot; 200 16351
 </pre>
 </body>
 </html>

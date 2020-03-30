@@ -5,11 +5,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
+    # Начальная миграция
     initial = True
 
     dependencies = [
     ]
 
+    # Такие-то операции, которые мы последовательно выполняем и создаём модель с определёнными полями.
     operations = [
         migrations.CreateModel(
             name='Car',

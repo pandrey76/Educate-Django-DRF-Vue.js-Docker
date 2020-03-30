@@ -411,6 +411,41 @@ Migrations for 'core':
   core/migrations/0001_initial.py
     - Create model Car
 
+    Файл 0001_initial.py представлено описание этой миграции, что это начальная миграция, операции, поля и т.д.
+
+    Деем миграцию:
+
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ ./manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, core, sessions
+Running migrations:
+  Applying core.0001_initial... OK
+
+    В СУД у нас появилось новая таблица "core".
+
+    Основная фишка миграций в Django это, то что их можно откатывать
+
+    Но начальную миграцию откатить нельзя!!
+
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ ./manage.py migrate core 0001
+Operations to perform:
+  Target specific migration: 0001_initial, from core
+Running migrations:
+  No migrations to apply.
+
+    Некоторые миграции могут быть необратимиы, особено те которые пишутся в ручную. В продакшене сделать обратимые
+миграции не получится, для этого случая лучше сделать ещё одну миграцию, которая откатывают эту миграцию, как
+в "git revert". Для отката мы просто вводим номер миграции, к которой нам надо откатится, например файл: 0001_initial.py,
+номер у миграции будет "0001".
+
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ ./manage.py migrate core 0001
+Operations to perform:
+  Target specific migration: 0001_initial, from core
+Running migrations:
+  No migrations to apply.
+
+
+
 
 
 
