@@ -351,6 +351,39 @@ found 0 vulnerabilities
 (localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ ./manage.py startapp core
 Создаём приложение, типо ядро (core) с некой ядерной логикой.
 
+Стартуем Django web server
+
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ ./manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 30, 2020 - 07:43:53
+Django version 3.0.4, using settings 'project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+
+Запускаем ещё один терминал и в нём запускаем Vue.js  приложение
+
+admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/frontend$ npm run serve
+
+> frontend@0.1.0 serve /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/frontend
+> vue-cli-service serve
+
+ INFO  Starting development server...
+98% after emitting CopyPlugin
+
+ DONE  Compiled successfully in 1313ms                                  10:46:55
+
+
+  App running at:
+  - Local:   http://localhost:8081/
+  - Network: http://172.20.10.12:8081/
+
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
+
 
 
 
