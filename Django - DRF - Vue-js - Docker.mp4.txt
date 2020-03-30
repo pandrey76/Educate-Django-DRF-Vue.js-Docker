@@ -345,3 +345,12 @@ found 0 vulnerabilities
     В папке router мы описываем по какому пути, какой компонент рисуется, ничего удивительного и сложного, очень похоже
 на Flask.
     Выкинув и удалив всё не нужное из нашего приложения получили пустую балванку Vue приложения.
+
+    Создаём Django application.
+
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ ./manage.py startapp core
+Создаём приложение, типо ядро (core) с некой ядерной логикой.
+
+
+
+
