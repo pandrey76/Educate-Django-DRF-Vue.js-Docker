@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 
-from backend.core.models import Car
+from core.models import Car
 
 
 def all_cars(request):
