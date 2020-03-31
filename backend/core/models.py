@@ -18,5 +18,6 @@ class Car(models.Model):
     #   или иной СУБД.
 
     # Объем двигателя.
+    # Самый логичная единица хранения объема двигателя это миллилитры.
     volume = models.PositiveSmallIntegerField()
 
