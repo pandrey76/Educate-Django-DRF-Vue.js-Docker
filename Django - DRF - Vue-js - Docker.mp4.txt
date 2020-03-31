@@ -452,6 +452,48 @@ Running migrations:
         request.COOCKIES. - отдаст все кукисы;
         request.META. - отдаст все заголовки.
 
+    Идём на http://127.0.0.1:8000/api/cars/ и видим пустой список [].
+
+    Теперь заполним базу данных.
+
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ ./manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>>
+>>> exit()
+
+    Кому нравится может установить вместо обычной консоли Python iPython
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ pip install ipython
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ ./manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.13.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]:
+
+    Вот автоматически запустился вместо стандартной Python консоли iPython.
+
+In [1]: from core.models import *
+
+In [2]: Car
+Out[2]: core.models.Car
+
+In [3]: Car.objects.create(vendor='BMW', model='325', year=2008, volume=2000)
+Out[3]: <Car: Car object (1)>
+
+    Идём на http://127.0.0.1:8000/api/cars/ и видим созданный объект машина
+    [{"vendor": "BMW", "model": "325", "year": 2008, "volume": 2000}]
+
+In [4]: Car.objects.create(vendor='Toyota', model='Mark II', year=1998, volume=2000)
+Out[4]: <Car: Car object (2)>
+
+    Идём на http://127.0.0.1:8000/api/cars/ и видим созданный объект машина
+    [{"vendor": "BMW", "model": "325", "year": 2008, "volume": 2000}, {"vendor": "Toyota", "model": "Mark II", "year": 1998, "volume": 2000}]
+
+    И эти данные мы уже можем забирать через наш frontend.
+
 
 
 

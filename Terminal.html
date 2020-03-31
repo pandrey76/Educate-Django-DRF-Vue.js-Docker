@@ -406,6 +406,105 @@ Django version 3.0.4, using settings &apos;project.settings&apos;
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 [30/Mar/2020 14:46:35] &quot;GET / HTTP/1.1&quot; 200 16351
-</pre>
+
+^Z
+[3]+  Остановлен    ./manage.py runserver
+(localenv) <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend</b></font>$ ./manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 31, 2020 - 09:07:57
+Django version 3.0.4, using settings &apos;project.settings&apos;
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+<font color="#EF2929"><b>Error: That port is already in use.</b></font>
+(localenv) <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend</b></font>$ ps aux | grep -i manage
+root       171  0.0  0.0      0     0 ?        I&lt;   10:19   0:00 [charger_<font color="#EF2929"><b>manage</b></font>r]
+root      1182  0.0  0.0 434328  9664 ?        Ssl  10:19   0:00 /usr/sbin/Modem<font color="#EF2929"><b>Manage</b></font>r --filter-policy=strict
+root      1218  0.0  0.1 495260 17832 ?        Ssl  10:19   0:00 /usr/sbin/Network<font color="#EF2929"><b>Manage</b></font>r --no-daemon
+root      5035  0.0  0.0  26124  6160 ?        S    10:43   0:00 /sbin/dhclient -d -q -sf /usr/lib/Network<font color="#EF2929"><b>Manage</b></font>r/nm-dhcp-helper -pf /run/dhclient-enp0s20u3c4i2.pid -lf /var/lib/Network<font color="#EF2929"><b>Manage</b></font>r/dhclient-b9ab74a5-5512-329b-a7e2-1487831e18c7-enp0s20u3c4i2.lease -cf /var/lib/Network<font color="#EF2929"><b>Manage</b></font>r/dhclient-enp0s20u3c4i2.conf enp0s20u3c4i2
+admin1    7043  0.0  0.2 105300 35880 pts/1    T    10:58   0:00 python ./<font color="#EF2929"><b>manage</b></font>.py runserver
+admin1    7523  0.0  0.2 105300 35724 pts/1    T    11:07   0:00 python ./<font color="#EF2929"><b>manage</b></font>.py runserver
+admin1    7654  0.0  0.2 105300 35772 pts/1    T    11:09   0:00 python ./<font color="#EF2929"><b>manage</b></font>.py runserver
+admin1    9333  4.7  0.2 342440 41204 pts/1    Tl   12:01   0:18 /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/bin/python ./<font color="#EF2929"><b>manage</b></font>.py runserver
+admin1    9552  0.0  0.0  21536   992 pts/1    S+   12:08   0:00 grep --color=auto -i <font color="#EF2929"><b>manage</b></font>
+(localenv) <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend</b></font>$ kill -9 9333
+(localenv) <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend</b></font>$ ./manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+(InteractiveConsole)
+&gt;&gt;&gt; exit()
+
+(localenv) <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend</b></font>$ pip install ipython
+Collecting ipython
+  Downloading https://files.pythonhosted.org/packages/61/6f/69f1eec859ce48a86660529b166b6ea466f0f4ab98e4fc0807b835aa22c6/ipython-7.13.0-py3-none-any.whl (780kB)
+    100% |████████████████████████████████| 788kB 411kB/s
+Collecting jedi&gt;=0.10 (from ipython)
+  Downloading https://files.pythonhosted.org/packages/01/67/333e2196b70840f411fd819407b4e98aa3150c2bd24c52154a451f912ef2/jedi-0.16.0-py2.py3-none-any.whl (1.1MB)
+    100% |████████████████████████████████| 1.1MB 412kB/s
+Collecting backcall (from ipython)
+  Downloading https://files.pythonhosted.org/packages/84/71/c8ca4f5bb1e08401b916c68003acf0a0655df935d74d93bf3f3364b310e0/backcall-0.1.0.tar.gz
+Collecting pygments (from ipython)
+  Downloading https://files.pythonhosted.org/packages/2d/68/106af3ae51daf807e9cdcba6a90e518954eb8b70341cee52995540a53ead/Pygments-2.6.1-py3-none-any.whl (914kB)
+    100% |████████████████████████████████| 921kB 386kB/s
+Collecting decorator (from ipython)
+  Downloading https://files.pythonhosted.org/packages/ed/1b/72a1821152d07cf1d8b6fce298aeb06a7eb90f4d6d41acec9861e7cc6df0/decorator-4.4.2-py2.py3-none-any.whl
+Collecting pexpect; sys_platform != &quot;win32&quot; (from ipython)
+  Downloading https://files.pythonhosted.org/packages/39/7b/88dbb785881c28a102619d46423cb853b46dbccc70d3ac362d99773a78ce/pexpect-4.8.0-py2.py3-none-any.whl (59kB)
+    100% |████████████████████████████████| 61kB 373kB/s
+Requirement already satisfied: setuptools&gt;=18.5 in /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/lib/python3.6/site-packages (from ipython)
+Collecting prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 (from ipython)
+  Downloading https://files.pythonhosted.org/packages/e4/a7/81b39aa50e9284fe2cb21cc7fb7de7817b224172d42793fd57451d38842b/prompt_toolkit-3.0.5-py3-none-any.whl (351kB)
+    100% |████████████████████████████████| 358kB 390kB/s
+Collecting pickleshare (from ipython)
+  Downloading https://files.pythonhosted.org/packages/9a/41/220f49aaea88bc6fa6cba8d05ecf24676326156c23b991e80b3f2fc24c77/pickleshare-0.7.5-py2.py3-none-any.whl
+Collecting traitlets&gt;=4.2 (from ipython)
+  Downloading https://files.pythonhosted.org/packages/ca/ab/872a23e29cec3cf2594af7e857f18b687ad21039c1f9b922fac5b9b142d5/traitlets-4.3.3-py2.py3-none-any.whl (75kB)
+    100% |████████████████████████████████| 81kB 442kB/s
+Collecting parso&gt;=0.5.2 (from jedi&gt;=0.10-&gt;ipython)
+  Downloading https://files.pythonhosted.org/packages/da/15/888f80e429a971d3838124adde705d7b07650aa3a59f4db07d61f653b8cd/parso-0.6.2-py2.py3-none-any.whl (97kB)
+    100% |████████████████████████████████| 102kB 244kB/s
+Collecting ptyprocess&gt;=0.5 (from pexpect; sys_platform != &quot;win32&quot;-&gt;ipython)
+  Downloading https://files.pythonhosted.org/packages/d1/29/605c2cc68a9992d18dada28206eeada56ea4bd07a239669da41674648b6f/ptyprocess-0.6.0-py2.py3-none-any.whl
+Collecting wcwidth (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython)
+  Downloading https://files.pythonhosted.org/packages/f6/d5/1ecdac957e3ea12c1b319fcdee8b6917ffaff8b4644d673c4d72d2f20b49/wcwidth-0.1.9-py2.py3-none-any.whl
+Collecting ipython-genutils (from traitlets&gt;=4.2-&gt;ipython)
+  Downloading https://files.pythonhosted.org/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl
+Collecting six (from traitlets&gt;=4.2-&gt;ipython)
+  Downloading https://files.pythonhosted.org/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl
+Building wheels for collected packages: backcall
+  Running setup.py bdist_wheel for backcall ... error
+  Complete output from command /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/bin/python3 -u -c &quot;import setuptools, tokenize;__file__=&apos;/tmp/pip-build-_pxoaws8/backcall/setup.py&apos;;f=getattr(tokenize, &apos;open&apos;, open)(__file__);code=f.read().replace(&apos;\r\n&apos;, &apos;\n&apos;);f.close();exec(compile(code, __file__, &apos;exec&apos;))&quot; bdist_wheel -d /tmp/tmpeuxvkb43pip-wheel- --python-tag cp36:
+  usage: -c [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+     or: -c --help [cmd1 cmd2 ...]
+     or: -c --help-commands
+     or: -c cmd --help
+
+  error: invalid command &apos;bdist_wheel&apos;
+
+  ----------------------------------------
+<font color="#CC0000">  Failed building wheel for backcall</font>
+  Running setup.py clean for backcall
+Failed to build backcall
+Installing collected packages: parso, jedi, backcall, pygments, decorator, ptyprocess, pexpect, wcwidth, prompt-toolkit, pickleshare, ipython-genutils, six, traitlets, ipython
+  Running setup.py install for backcall ... done
+Successfully installed backcall-0.1.0 decorator-4.4.2 ipython-7.13.0 ipython-genutils-0.2.0 jedi-0.16.0 parso-0.6.2 pexpect-4.8.0 pickleshare-0.7.5 prompt-toolkit-3.0.5 ptyprocess-0.6.0 pygments-2.6.1 six-1.14.0 traitlets-4.3.3 wcwidth-0.1.9
+(localenv) <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend</b></font>$ ./manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+Type &apos;copyright&apos;, &apos;credits&apos; or &apos;license&apos; for more information
+IPython 7.13.0 -- An enhanced Interactive Python. Type &apos;?&apos; for help.
+
+<font color="#008700">In [</font><font color="#8AE234"><b>1</b></font><font color="#008700">]: </font><font color="#008700"><b>from</b></font> <font color="#0087D7"><b>core.models</b></font> <font color="#008700"><b>import</b></font> *
+
+<font color="#008700">In [</font><font color="#8AE234"><b>2</b></font><font color="#008700">]: </font>Car
+<font color="#870000">Out[</font><font color="#EF2929"><b>2</b></font><font color="#870000">]: </font>core.models.Car
+
+<font color="#008700">In [</font><font color="#8AE234"><b>3</b></font><font color="#008700">]: </font>Car.objects.create(vendor=<font color="#AF5F00">&apos;BMW&apos;</font>, model=<font color="#AF5F00">&apos;325&apos;</font>, year=<font color="#008700">2008</font>, volume=<font color="#008700">2000</font>)
+<font color="#870000">Out[</font><font color="#EF2929"><b>3</b></font><font color="#870000">]: </font>&lt;Car: Car object (1)&gt;
+
+<font color="#008700">In [</font><font color="#8AE234"><b>4</b></font><font color="#008700">]: </font>Car.objects.create(vendor=<font color="#AF5F00">&apos;Toyota&apos;</font>, model=<font color="#AF5F00">&apos;Mark II&apos;</font>, year=<font color="#008700">1998</font>, volume=<font color="#008700">2000</font>)
+<font color="#870000">Out[</font><font color="#EF2929"><b>4</b></font><font color="#870000">]: </font>&lt;Car: Car object (2)&gt;
 </body>
 </html>
