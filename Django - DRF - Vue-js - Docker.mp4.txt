@@ -497,6 +497,23 @@ Out[4]: <Car: Car object (2)>
 
     Для удобной работы с Vue.js можно установить расширение в chrome "Vue.js devtools".
 
+    00:46:00
+    Пока не работаеи из-за Cross-Origin Resource Sharing (CORS) (совместное использование ресурсов между разными
+источниками) всё, что нам надо сделать это добавить наш frontend домен в разрешённый список доменов нашего Django
+сервера. CORS - это первое с чем обычно сталкиваются, другими словами CORS - это шаринг ресурсов между хостами. Даже,
+то что у нашего frontend и backend одинаковое доменное имя http://127.0.0.1 они работают по разным портам и по сути
+наши frontend и backend работают по разным хостам. Для корректной работы нам в frontend наш backend должен поставлять
+CORS заголовки. Для Django это делается крайне просто, установкой пакета django-cors-headers.
+
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ pip3 install django-cors-headers
+Collecting django-cors-headers
+  Downloading https://files.pythonhosted.org/packages/19/4e/dd037bf42cc33d1d61e45b973507303afad14fc18bd36329ec8ab3673373/django_cors_headers-3.2.1-py3-none-any.whl
+Requirement already satisfied: Django>=1.11 in /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/lib/python3.6/site-packages (from django-cors-headers)
+Requirement already satisfied: pytz in /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/lib/python3.6/site-packages (from Django>=1.11->django-cors-headers)
+Requirement already satisfied: asgiref~=3.2 in /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/lib/python3.6/site-packages (from Django>=1.11->django-cors-headers)
+Requirement already satisfied: sqlparse>=0.2.2 in /home/admin1/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/localenv/lib/python3.6/site-packages (from Django>=1.11->django-cors-headers)
+Installing collected packages: django-cors-headers
+Successfully installed django-cors-headers-3.2.1
 
 
 

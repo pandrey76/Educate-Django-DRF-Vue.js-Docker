@@ -37,18 +37,38 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'core',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# CORS_ORIGIN_WHITELIST = [
+#     "http://localhost:8080",
+#     "http://172.20.10.12:8080",
+#     "http://127.0.0.1:8080"
+# ]
+
+# Список строк, представляющих регулярные выражения, соответствующие источникам, которым разрешено создавать
+# межсайтовые HTTP-запросы. По умолчанию []. Полезно, когда использовать CORS_ORIGIN_WHITELIST нецелесообразно,
+# например, когда у вас есть большое количество поддоменов (например: r"^https://\w+\.example\.com$",).
+# CORS_ORIGIN_REGEX_WHITELIST = [
+#     r"^http://lokalhost:\W+$",
+# ]
+
+# Если True, то CORS_ORIGIN_WHITELIST (белый список хостов) не будет использоваться, и все источники будут приняты.
+# По умолчанию False. В отладочной версии будем использовать данный параметр.
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 ROOT_URLCONF = 'project.urls'
 
