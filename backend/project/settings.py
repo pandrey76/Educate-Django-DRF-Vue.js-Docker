@@ -52,11 +52,11 @@ INTERNAL_IPS = [
 ]
 
 MIDDLEWARE = [
-    # debug:
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-
     # CROS
     'corsheaders.middleware.CorsMiddleware',
+
+    # debug:
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 
     # Basic
     'django.middleware.security.SecurityMiddleware',
@@ -85,6 +85,14 @@ MIDDLEWARE = [
 # По умолчанию False. В отладочной версии будем использовать данный параметр.
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 ROOT_URLCONF = 'project.urls'
 
