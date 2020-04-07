@@ -516,6 +516,17 @@ Installing collected packages: django-cors-headers
 Successfully installed django-cors-headers-3.2.1
 
 
+00:47:41
+    Всё,  наш backend отправляет CORS заголовки и мы видим, через консоль разработчике (вкладка Vue) на стороне
+frontend, data и наши два объекта:
+        <Root>
+            <App>
+                <RouterLink>
+                <RouterLink>
+                <home>
+                    cars: Array[2].
+
+    мы скачали с Backend по AJAX наш масив, нам теперь надо его отрендерить.
 
 
 
