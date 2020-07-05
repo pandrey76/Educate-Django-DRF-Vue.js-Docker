@@ -616,3 +616,47 @@ Successfully installed djangorestframework-3.11.0
         {"id": 1, "vendor": "BMW", "model": "325", "year": 2008, "volume": 2000},
         {"id": 2, "vendor": "Toyota", "model": "Mark II", "year": 1998, "volume": 2000}
     ]
+
+    56:20
+    Далее удаляем функцию all_cars (файл: backend/core/views.py) и вместо её создаём класс:
+
+        # ModelViewSet даёт нам стандартизированный доступ в стиле REST ко всему вообще. мы можкм
+        class CarViewSet(ModelViewSet):
+            # Мы можем с помощью этого "ModelViewSet" определив класс сериализатора
+            serializer_class = CarSerializer
+            # и queryset
+            queryset = Car.objects.all()
+
+    После переходим в файл "backend/project/urls.py".
+    Для работы сериализатора необходимо определить объет Router, данный объекты описываются в туториалах
+    (https://www.django-rest-framework.org/tutorial/6-viewsets-and-routers/) на DjangoRestFramework и мы его определяем.
+
+        router = DefaultRouter()
+        # Говорим о том, что у нас по "/api/cars", ну api у нас берётся из "backend/project/urls.py"
+        # path('api/', include("core.urls")),
+        # потом cars к api преплюсовываеся и мы хотим отдавать этот .
+        router.register("cars",CarViewSet)
+
+    Далее заменяем
+
+        urlpatterns = [
+            path('cars/', all_cars),
+            ]
+    на
+
+        urlpatterns = router.urls
+
+    и перегружаем frontend.
+
+    Мы видим, что ничего не изменилось, но кучу строчек кода мы сэкономили и избавились от повторяющегося кода.
+    и ешё по ссылке "http://127.0.0.1:8000/api/cars/" появился приятный интерфейс django-rest-framework.
+    при всём при этом это всё работает c GET запросами и с PUT запросами.
+    Мы можем добавит "2/" ("http://127.0.0.1:8000/api/cars/2/") и отредактировать любое поле нашего объекта, например:
+        Model -> Mark II Tourer V
+        Volume -> 2500
+    И всё редактируется и это видно в нашем Vue (frontend).
+    Также мы иожем работать с DELETE запросами.
+
+    59:00
+
+

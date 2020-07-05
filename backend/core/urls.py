@@ -1,6 +1,11 @@
 from django.urls import path
-from core.views import all_cars
+from rest_framework.routers import DefaultRouter
+from core.views import CarViewSet
 
-urlpatterns = [
-    path('cars/', all_cars),
-]
+router = DefaultRouter()
+# Говорим о том, что у нас по "/api/cars", ну api у нас берётся из "backend/project/urls.py"
+# path('api/', include("core.urls")),
+# потом cars к api преплюсовываеся и мы хотим отдавать этот .
+router.register("cars",CarViewSet)
+
+urlpatterns = router.urls
