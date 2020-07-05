@@ -24,10 +24,14 @@
       </tr>
       </tbody>
     </table>
-      <input placeholder="vendor"/>
-      <input placeholder="model"/>
-      <input placeholder="year"/>
-      <input placeholder="volume"/>
+      <input placeholder="vendor" v-model="currentCar.vendor"/>
+      <input placeholder="model" v-model="currentCar.model"/>
+      <!--
+        Два последующих параметра у нас числа. Так записываем для того, чтобы Vue автоматически
+        ту строку, которую мы ввели конвертировал в число.
+      -->
+      <input placeholder="year" v-model.number="currentCar.year"/>
+      <input placeholder="volume" v-model.number="currentCar.volume"/>
       <button>Create</button>
   </div>
 </template>
@@ -54,6 +58,11 @@ export default {
   data() {
     return {
       cars: [],
+      // input изменился мне надо где-то хранить его сначения
+      // Это у нас объект в который у нас будет складыватся что-то
+      // Мы привязываем inputы, чтобы при изменении inputов автоматически в объект
+      // добавлялись свойства. Это делается во Vue с помощью v-model.
+      currentCar: {}
     };
   },
   // Для удобной работы с Vue.js можно установить расширение в chrome "Vue.js devtools".
