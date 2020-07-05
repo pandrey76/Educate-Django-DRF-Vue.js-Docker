@@ -683,3 +683,17 @@ Successfully installed djangorestframework-3.11.0
     У Django Rest Framework есть очень много настроек и желательно их аккуратно и внимательно изучить.
 
     01:01:00
+
+    Мы научились создавать модели.
+    Теперь установим расширение браузера Chrome "Advanced REST Client" и через него отправим PUT запрос:
+        URL:        http://127.0.0.1:8000/api/cars/
+        Header:     application/json
+        Body:       {"vendor": "Lada", "model": "2106", "year": 1973, "volume": 1600 }
+
+        Response 201 Created
+
+    Мы добавили ещё одну машину, через REST API. Она отобразилась и во frontend и
+    по ссылке "http://127.0.0.1:8000/api/cars/".
+    Таким образом мы можем отправлять на наш сервер запросы.
+
+    01:02:15
