@@ -24,6 +24,11 @@
       </tr>
       </tbody>
     </table>
+      <input placeholder="vendor"/>
+      <input placeholder="model"/>
+      <input placeholder="year"/>
+      <input placeholder="volume"/>
+      <button>Create</button>
   </div>
 </template>
 
