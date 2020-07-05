@@ -586,5 +586,18 @@ Successfully installed djangorestframework-3.11.0
     И после этого добавляем в файл: "backend/project/settings.py" в список "INSTALLED_APPS" ещё один параметр
     'rest_framework'
 
+    После этого первое, что нам нужно сделать, чтобы restframework понял как работать с нашими объектами, т.е.
+сериализовать нашу машину нам надо создать сериализатор.
+    Создаём файл "/backend/core/serializers.py":
+        class CarSerializer(ModelSerializer):
+            class Meta:
+            # Объявляем какую модель мы хотим сериализовать
+                model = Car
+            # И какие поля из неё мы хотим сериализовать, обычно это передаётся списком
+            # fields = ["vendor", "model", "year", "volume"], но во время разработки, когда у нас API ещё не закреплён и
+            # нам надо быстро всё сделать мы можем написать просто: fields = "__all__", это значит все поля модели
+            # будут сериализованы.
+                fields = "__all__"
+
 
 
