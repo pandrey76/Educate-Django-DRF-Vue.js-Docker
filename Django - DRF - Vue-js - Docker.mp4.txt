@@ -599,5 +599,20 @@ Successfully installed djangorestframework-3.11.0
             # будут сериализованы.
                 fields = "__all__"
 
+    Теперь заменяем отдаём модели через наш сериализатор, меняем во views.py строки:
+         for car in cars:
+            result.append({
+                "vendor": car.vendor,
+                "model": car.model,
+                "year": car.year,
+                "volume": car.volume,
+                })
+    на
+            for car in cars:
+                result.append(CarSerializer(car).data)
 
-
+    Теперь в браузере по ссылке: "http://127.0.0.1:8000/api/cars/" мы видим наши данные:
+    [
+        {"id": 1, "vendor": "BMW", "model": "325", "year": 2008, "volume": 2000},
+        {"id": 2, "vendor": "Toyota", "model": "Mark II", "year": 1998, "volume": 2000}
+    ]
