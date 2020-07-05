@@ -534,7 +534,57 @@ frontend, data и наши два объекта:
          <td>{{car.year}}</td>
          <td>{{car.volume}}</td>
       </tr>
-      Выводим список машин полученных с нашего backend. У нас отрисовались данные и как мы видим мы не где с DOM не взаимодействуем. Всё
+     Выводим список машин полученных с нашего backend. У нас отрисовались данные и как мы видим мы не где с DOM не взаимодействуем. Всё
            отрисовалось как-только cars обновился.
+
+     Далее мы удаляем вкладки "Home" и "About" из файла App.vue.
+      <div id="nav">
+         <router-link to="/">Home</router-link> |
+         <router-link to="/about">About</router-link>
+      </div>
+
+      В файл Home.vue добавляем инпуты и кнопку создания:
+
+          <input placeholder="vendor"/>
+          <input placeholder="model"/>
+          <input placeholder="year"/>
+          <input placeholder="volume"/>
+          <button>Create</button>
+
+      После этого мы связываем наши Инпуты с Vue( файл: Home.vue
+            <input placeholder="vendor" v-model="currentCar.vendor"/>
+            <input placeholder="model" v-model="currentCar.model"/>
+                <!--
+                    Два последующих параметра у нас числа. Так записываем для того, чтобы Vue автоматически
+                    ту строку, которую мы ввели конвертировал в число.
+                -->
+            <input placeholder="year" v-model.number="currentCar.year"/>
+            <input placeholder="volume" v-model.number="currentCar.volume"/>
+            <button>Create</button>
+
+      Далее при нажатии на кнопку "Create" отправлять запрос в backend, но чтобы отпралять запрос в backend нужно
+      сначало принимать запрос в backend.
+      для этого мы переходим в "backend/core/views.py" и пытаемся там создать новую функццию:
+
+            def create_car(request):
+      и тут у нас начинают появлятся сомнения, почему мы пишем столько болерного кода, а потом мы захотим удалить
+      эту машину или захотим редактировать её мы получим много кусков повторяющегося кода.
+      Поэтому всё уже придумали и нам только нужно установить "djangorestframework".
+
+(localenv) admin1@ubuntu18:~/work/Education/WebFullStackDevelopment/Educate-Django-DRF-Vue.js-Docker/backend$ pip3 install djangorestframework
+Collecting djangorestframework
+  Cache entry deserialization failed, entry ignored
+  Downloading https://files.pythonhosted.org/packages/be/5b/9bbde4395a1074d528d6d9e0cc161d3b99bd9d0b2b558ca919ffaa2e0068/djangorestframework-3.11.0-py3-none-any.whl (911kB)
+    100% |████████████████████████████████| 911kB 153kB/s
+Requirement already satisfied: django>=1.11 in ./localenv/lib/python3.6/site-packages (from djangorestframework)
+Requirement already satisfied: sqlparse>=0.2.2 in ./localenv/lib/python3.6/site-packages (from django>=1.11->djangorestframework)
+Requirement already satisfied: asgiref~=3.2 in ./localenv/lib/python3.6/site-packages (from django>=1.11->djangorestframework)
+Requirement already satisfied: pytz in ./localenv/lib/python3.6/site-packages (from django>=1.11->djangorestframework)
+Installing collected packages: djangorestframework
+Successfully installed djangorestframework-3.11.0
+
+    И после этого добавляем в файл: "backend/project/settings.py" в список "INSTALLED_APPS" ещё один параметр
+    'rest_framework'
+
 
 
